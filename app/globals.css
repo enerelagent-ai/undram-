@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-100: #FEF3C7;
+  /* Soft Yellow Accent */
+  --color-gold-200: #FDE68A;
+  --color-gold-300: #FCD34D;
+  --color-gold-400: #FBBF24;
+  --color-gold-500: #F59E0B;
+  /* Honey Amber Primary */
+  --color-gold-600: #B45309;
+  --color-gold-700: #92400E;
+  --color-gold-800: #78350F;
+  --color-gold-900: #451A03;
+  /* Deep Chocolate Brown */
+
+  --color-charcoal-800: #374151;
+  --color-charcoal-900: #451A03;
+  /* Deep Chocolate Brown (Main Text) */
+
+  --color-cream-50: #FDFBF7;
+  /* Creamy Organic Background */
+  --color-cream-100: #FAF5EA;
+  /* Honeycomb Pattern Color */
+
+  --color-accent: #92400E;
+  /* Amber Brown Accent */
+
+  --color-background: var(--color-cream-50);
+  --color-foreground: var(--color-charcoal-900);
+
+  --font-heading: 'Times New Roman', 'Source Han Serif CN', 'SimSun', 'Batang', 'Gungsuh', Times, serif;
+  --font-body: 'Times New Roman', 'Source Han Serif CN', 'SimSun', 'Batang', 'Gungsuh', Times, serif;
+  --font-price: var(--font-inter);
+}
+
+@layer utilities {
+  .font-price {
+    font-family: var(--font-price);
+  }
+
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='104' viewBox='0 0 60 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 17.32V51.96L30 69.28L0 51.96V17.32L30 0Z' fill='none' stroke='%23FAF5EA' stroke-width='2' /%3E%3Cpath d='M30 69.28L60 86.6V121.24L30 138.56L0 121.24V86.6L30 69.28Z' fill='none' stroke='%23FAF5EA' stroke-width='2' transform='translate(30, 52)' /%3E%3C/svg%3E");
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  font-size: 14px;
+  /* Mobile base size */
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-gold-500);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+    /* Desktop base size */
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-gold-500);
+  line-height: 1.2;
+}
+
+h1 {
+  @apply text-3xl md:text-5xl;
+}
+
+h2 {
+  @apply text-2xl md:text-4xl;
+}
+
+h3 {
+  @apply text-xl md:text-3xl;
+}
+
+h4 {
+  @apply text-lg md:text-2xl;
+}
+
+h5 {
+  @apply text-base md:text-xl;
+}
+
+h6 {
+  @apply text-sm md:text-lg;
+}
+
+@keyframes wiggle {
+
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+.animate-wiggle-slow {
+  animation: wiggle 2s ease-in-out infinite;
+}
