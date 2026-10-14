@@ -1,175 +1,130 @@
 "use client";
-
-import Image from "next/image";
-
-import { useState, useEffect } from "react";
+import { useCallback, useState } from "react";
 import Link from "next/link";
-import { Menu, X, ShoppingBag, Globe, ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+import dynamic from "next/dynamic";
+import { ShoppingBag, Menu, X, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useCart } from "@/context/CartContext";
-import { translations } from "@/context/translations";
-import CartModal from "./CartModal";
-import CheckoutModal from "./CheckoutModal";
-
+import { useModalAccessibility } from "@/hooks/useModalAccessibility";
+import { ui } from "@/utils/storefront";
+const CartModal = dynamic(() => import("./CartModal"), { ssr: false });
+const CheckoutModal = dynamic(() => import("./CheckoutModal"), { ssr: false });
 export default function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
-    const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
-
-    const { language, setLanguage } = useLanguage();
-    const { toggleCart, cartItems } = useCart();
-    const t = translations[language].nav;
-
-    const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const navLinks = [
-        { name: t?.shop || "Shop", href: "/#shop" },
-        { name: t?.whereToBuy || "Where to Buy", href: "/stores" },
-        { name: t?.story || "Our Story", href: "/story" },
-        { name: t?.recipes || "Recipes", href: "/recipes" },
-        { name: t?.contact || "Contact", href: "/#footer" },
-    ];
-
-    const languages = [
-        { code: "mn", label: "Монгол" },
-        { code: "en", label: "English" },
-        { code: "zh", label: "中文" },
-        { code: "ko", label: "한국어" },
-    ];
-
-    return (
-        <>
-            <nav
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-                    ? "bg-cream-50/80 backdrop-blur-md shadow-sm py-4 border-b border-gold-500/10"
-                    : "bg-transparent py-6"
-                    }`}
+  const { language, setLanguage } = useLanguage();
+  const { cartItems, isCartOpen, toggleCart } = useCart();
+  const [menu, setMenu] = useState(false);
+  const [checkout, setCheckout] = useState(false);
+  const close = useCallback(() => setMenu(false), []);
+  const closeCheckout = useCallback(() => setCheckout(false), []);
+  const ref = useModalAccessibility(menu, close);
+  const pathname = usePathname();
+  const t = ui[language];
+  const links = [
+    ["products", "/products"],
+    ["story", "/story"],
+    ["stores", "/stores"],
+    ["recipes", "/recipes"],
+    ["news", "/news"],
+  ];
+  const count = cartItems.reduce((s, p) => s + p.quantity, 0);
+  return (
+    <>
+      <a className="skip-link" href="#main-content">
+        {t.details}
+      </a>
+      <div className="announcement">
+        {language === "mn"
+          ? "МОНГОЛЫН ЗЭРЛЭГ ЦЭЦЭГСЭЭС • ТАНЫ ШИРЭЭНД"
+          : language === "en"
+            ? "FROM MONGOLIAN WILDFLOWERS • TO YOUR TABLE"
+            : language === "zh"
+              ? "从蒙古野花 • 到您的餐桌"
+              : "몽골의 야생화에서 • 당신의 식탁까지"}
+      </div>
+      <header className="site-header">
+        <nav className="nav-shell" aria-label={t.menu}>
+          <Link href="/" className="wordmark" aria-label="UNDRAM">
+            <span>
+              UNDRAM<span className="brand-dot">.</span>
+            </span>
+            <small>MONGOLIAN HONEY</small>
+          </Link>
+          <div className="desktop-links">
+            {links.map(([key, href]) => (
+              <Link
+                key={key}
+                href={href}
+                aria-current={pathname.startsWith(href) ? "page" : undefined}
+              >
+                {t[key]}
+              </Link>
+            ))}
+          </div>
+          <div className="nav-actions">
+            <label className="language-select">
+              <span className="sr-only">{t.language}</span>
+              <select
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                aria-label={t.language}
+              >
+                <option value="mn">MN</option>
+                <option value="en">EN</option>
+                <option value="zh">中文</option>
+                <option value="ko">한국어</option>
+              </select>
+            </label>
+            <button
+              className="bag-button"
+              aria-label={`${t.cart} (${count})`}
+              onClick={toggleCart}
             >
-                <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-                    {/* Logo */}
-                    <Link href="/" className="relative h-10 w-auto hover:opacity-80 transition-opacity">
-                        <Image
-                            src="/images/logo.png"
-                            alt="Undram Honey"
-                            width={150}
-                            height={40}
-                            className="h-full w-auto object-contain object-left"
-                            priority
-                        />
-                    </Link>
-
-                    {/* Desktop Links */}
-                    <div className="hidden md:flex items-center gap-10">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                className="text-charcoal-900/80 hover:text-gold-500 font-medium transition-colors text-sm tracking-wide uppercase"
-                            >
-                                {link.name}
-                            </Link>
-                        ))}
-                    </div>
-
-                    {/* CTA & Language & Mobile Toggle */}
-                    <div className="flex items-center gap-6">
-                        {/* Language Dropdown */}
-                        <div className="relative">
-                            <button
-                                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                                className="flex items-center gap-1 text-charcoal-900 font-bold hover:text-gold-500 transition-colors uppercase text-xs tracking-wider"
-                            >
-                                <Globe size={16} />
-                                {language.toUpperCase()}
-                                <ChevronDown size={12} />
-                            </button>
-
-                            <AnimatePresence>
-                                {isLangMenuOpen && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 10 }}
-                                        className="absolute top-full right-0 mt-4 bg-white rounded-none shadow-xl border border-gold-100 overflow-hidden min-w-[120px]"
-                                    >
-                                        {languages.map((lang) => (
-                                            <button
-                                                key={lang.code}
-                                                onClick={() => {
-                                                    setLanguage(lang.code);
-                                                    setIsLangMenuOpen(false);
-                                                }}
-                                                className={`w-full text-left px-6 py-3 text-sm font-medium hover:bg-gold-50 transition-colors ${language === lang.code ? "text-gold-500" : "text-charcoal-800"
-                                                    }`}
-                                            >
-                                                {lang.label}
-                                            </button>
-                                        ))}
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
-
-                        {/* Cart Button */}
-                        <button
-                            onClick={toggleCart}
-                            className="relative text-charcoal-900 hover:text-gold-500 transition-colors"
-                        >
-                            <ShoppingBag size={20} />
-                            {cartItemCount > 0 && (
-                                <span className="absolute -top-2 -right-2 bg-gold-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-                                    {cartItemCount}
-                                </span>
-                            )}
-                        </button>
-
-                        <button
-                            className="md:hidden text-charcoal-900 hover:text-gold-500 transition-colors"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        >
-                            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                    </div>
-                </div>
-
-                {/* Mobile Menu */}
-                <AnimatePresence>
-                    {isMobileMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "100vh" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="md:hidden bg-cream-50 fixed inset-0 top-[70px] z-40 overflow-y-auto"
-                        >
-                            <div className="flex flex-col p-8 gap-6 items-center justify-center h-full">
-                                {navLinks.map((link) => (
-                                    <Link
-                                        key={link.name}
-                                        href={link.href}
-                                        className="text-2xl font-heading text-charcoal-900 hover:text-gold-500 transition-colors"
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                    >
-                                        {link.name}
-                                    </Link>
-                                ))}
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </nav>
-
-            <CartModal onCheckout={() => setIsCheckoutOpen(true)} />
-            <CheckoutModal isOpen={isCheckoutOpen} onClose={() => setIsCheckoutOpen(false)} />
-        </>
-    );
+              <ShoppingBag size={20} />
+              <span>{count}</span>
+            </button>
+            <button
+              className="mobile-toggle icon-button"
+              aria-label={t.menu}
+              aria-expanded={menu}
+              onClick={() => setMenu(true)}
+            >
+              <Menu size={22} />
+            </button>
+          </div>
+        </nav>
+      </header>
+      {menu && (
+        <div
+          className="mobile-menu"
+          ref={ref}
+          role="dialog"
+          aria-modal="true"
+          aria-label={t.menu}
+          tabIndex={-1}
+        >
+          <div className="mobile-menu-top">
+            <span className="eyebrow">UNDRAM / {t.menu}</span>
+            <button
+              className="icon-button"
+              onClick={close}
+              aria-label={t.close}
+            >
+              <X />
+            </button>
+          </div>
+          {[...links, ["contact", "/contact"]].map(([key, href], i) => (
+            <Link key={key} href={href} onClick={close}>
+              <small>0{i + 1}</small>
+              {t[key]}
+              <ArrowUpRight size={24} />
+            </Link>
+          ))}
+          <p>MONGOLIAN HONEY · EST. IN NATURE</p>
+        </div>
+      )}
+      {isCartOpen && <CartModal onCheckout={() => setCheckout(true)} />}
+      <CheckoutModal isOpen={checkout} onClose={closeCheckout} />
+    </>
+  );
 }

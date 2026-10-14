@@ -1,70 +1,82 @@
 "use client";
-
-import { Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
+import { ArrowUpRight, Instagram, Facebook } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/context/translations";
-
+import { ui } from "@/utils/storefront";
 export default function Footer() {
-    const { language } = useLanguage();
-    const t = translations[language].footer;
-
-    return (
-        <footer id="footer" className="bg-[#5D2906] text-white pt-20 pb-10">
-            <div className="container mx-auto px-4">
-                <div className="grid md:grid-cols-2 gap-16 mb-16">
-                    {/* Brand - Left Column */}
-                    <div>
-                        <Link href="/" className="text-3xl font-bold font-heading mb-6 block uppercase tracking-wider">
-                            UNDRAM
-                        </Link>
-                        <p className="text-white/90 mb-8 text-lg leading-relaxed max-w-md">
-                            {t.desc}
-                        </p>
-                        <div className="flex gap-4">
-                            <a href="https://www.facebook.com/mongolian.natural.honey" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-white text-[#5D2906] p-3 rounded-full hover:bg-gold-500 hover:text-white transition-colors">
-                                <Facebook size={20} />
-                            </a>
-                            <a href="https://www.instagram.com/undram_brand_products/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-white text-[#5D2906] p-3 rounded-full hover:bg-gold-500 hover:text-white transition-colors">
-                                <Instagram size={20} />
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Newsletter & Contact - Right Column */}
-                    <div>
-                        <h4 className="font-bold text-2xl mb-4">{t.newsletter.heading}</h4>
-                        <p className="text-white/80 mb-6">{t.newsletter.desc}</p>
-                        <form className="flex flex-col sm:flex-row gap-3 mb-10" onSubmit={(event) => event.preventDefault()}>
-                            <input
-                                type="email"
-                                aria-label={t.newsletter.placeholder}
-                                placeholder={t.newsletter.placeholder}
-                                className="bg-black/20 border border-white/10 rounded-lg px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-gold-500 flex-grow"
-                            />
-                            <button className="bg-yellow-500 text-white font-bold px-8 py-4 rounded-lg hover:bg-yellow-600 transition-colors uppercase tracking-wide">
-                                {t.newsletter.btn}
-                            </button>
-                        </form>
-
-                        <div className="text-white/80 space-y-3 font-light">
-                            <p className="flex items-center gap-3">
-                                <span className="font-bold">Phone:</span> {t.contactInfo.phone}
-                            </p>
-                            <p className="flex items-center gap-3">
-                                <span className="font-bold">Email:</span> {t.contactInfo.email}
-                            </p>
-                            <p className="flex items-center gap-3">
-                                <span className="font-bold">Address:</span> {t.contactInfo.address}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="border-t border-white/10 pt-8 text-center text-white/40 text-sm">
-                    <p>{t.copyright}</p>
-                </div>
-            </div>
-        </footer>
-    );
+  const { language } = useLanguage();
+  const t = ui[language],
+    f = translations[language].footer;
+  return (
+    <footer id="footer" className="site-footer">
+      <div className="shell footer-top">
+        <div className="footer-intro">
+          <span className="eyebrow">MONGOLIAN HONEY</span>
+          <h2>
+            {language === "mn"
+              ? "Байгалиас.\nСэтгэлээс."
+              : language === "en"
+                ? "From nature.\nWith care."
+                : language === "zh"
+                  ? "源自自然。\n用心呈现。"
+                  : "자연에서.\n정성으로."}
+          </h2>
+          <p>{f.desc}</p>
+          <div className="social-links">
+            <a
+              href="https://www.facebook.com/mongolian.natural.honey"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Facebook size={19} />
+            </a>
+            <a
+              href="https://www.instagram.com/undram_brand_products/"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Instagram size={19} />
+            </a>
+          </div>
+        </div>
+        <div className="footer-links">
+          <span className="eyebrow">UNDRAM</span>
+          {[
+            ["products", "/products"],
+            ["story", "/story"],
+            ["stores", "/stores"],
+            ["recipes", "/recipes"],
+            ["news", "/news"],
+            ["contact", "/contact"],
+          ].map(([k, h]) => (
+            <Link href={h} key={k}>
+              {t[k]}
+            </Link>
+          ))}
+        </div>
+        <div className="footer-contact">
+          <span className="eyebrow">{t.contact}</span>
+          <a href="tel:+97691001393" className="footer-phone">
+            {f.contactInfo.phone}
+          </a>
+          <a href="mailto:Undraabrand@gmail.com">{f.contactInfo.email}</a>
+          <p>{f.contactInfo.address}</p>
+          <Link className="text-link" href="/contact">
+            {t.delivery}
+            <ArrowUpRight size={18} />
+          </Link>
+        </div>
+      </div>
+      <div className="shell footer-wordmark" aria-hidden="true">
+        UNDRAM<span>®</span>
+      </div>
+      <div className="shell footer-bottom">
+        <span>© 2026 UNDRAM · Энэрэлт Тулуй ХХК</span>
+        <span>MONGOLIA, WITH LOVE.</span>
+      </div>
+    </footer>
+  );
 }

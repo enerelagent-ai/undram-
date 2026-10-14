@@ -128,14 +128,14 @@ export const translations = {
                     id: "oxymel",
                     title: "UNDRAM OXYMEL",
                     price: "30,000₮",
-                    image: "/images/oxymel.png",
+                    image: "/images/oxymel.webp",
                     description: "UNDRAM OXYMEL нь Монголын цэвэр зөгийн бал, органик алимны цуу болон байгалийн амтлагчуудыг уламжлалт аргаар хослуулан бүтээсэн эрүүл мэндийг дэмжих ундаа юм. Зөгийн балны шим тэжээл, алимны цууны органик хүчил, цагаан гаа болон халуун ногооны идэвхт нэгдлүүд нь дархлаа, хоол боловсруулалт болон биеийн ерөнхий эрч хүчийг дэмжинэ.\n\nОрц: Зөгийн бал, Органик алимны цуу, Цагаан гаа, Шанцай, Хадаасан цэцэг\n\nОнцлог: Монголын цэвэр зөгийн балтай • Органик алимны цуутай • Цагаан гаа, шанцай, хадаасан цэцэгтэй • Хиймэл нэмэлтгүй • Өдөр тутмын хэрэглээнд тохиромжтой"
                 },
                 {
                     id: "honey-wine",
                     title: "UNDRAM HONEY WINE",
                     price: "20,000₮",
-                    image: "/images/wine.png",
+                    image: "/images/wine.webp",
                     description: "UNDRAM Honey Wine нь Монгол орны байгалийн цэвэр зөгийн балаар исгэж үйлдвэрлэсэн өвөрмөц амт үнэртэй балт дарс юм. Зөгийн балны зөөлөн чихэрлэг амт нь шанцай, хадаасан цэцэг болон эмийн ургамлын үнэртэй зохицож, тансаг хэрэглээнд зориулсан бүтээгдэхүүн болдог.\n\nОнцлог: 100% байгалийн зөгийн балаар исгэсэн • Зөөлөн амт, анхилуун үнэртэй • Бэлэг болон тусгай хэрэглээнд тохиромжтой • Монголын онцлогийг шингээсэн • Гар аргаар боловсруулсан\n\nХэрэглэх арга: 10–14°C орчим хөргөж хэрэглэнэ."
                 }
             ]
@@ -500,14 +500,14 @@ export const translations = {
                     id: "oxymel",
                     title: "UNDRAM OXYMEL",
                     price: "30,000₮",
-                    image: "/images/oxymel.png",
+                    image: "/images/oxymel.webp",
                     description: "UNDRAM OXYMEL is a traditional health drink crafted by combining pure Mongolian honey, organic apple cider vinegar, and natural flavorings. The nutrients of honey, organic acids of apple cider vinegar, and active compounds of ginger and spices support immunity, digestion, and overall vitality.\n\nIngredients: Honey, Organic Apple Cider Vinegar, Ginger, Coriander, Cloves\n\nFeatures: Made with pure Mongolian honey • Contains organic apple cider vinegar • With ginger, coriander, and cloves • No artificial additives • Suitable for daily use"
                 },
                 {
                     id: "honey-wine",
                     title: "UNDRAM HONEY WINE",
                     price: "20,000₮",
-                    image: "/images/wine.png",
+                    image: "/images/wine.webp",
                     description: "UNDRAM Honey Wine is a mead with unique aroma and flavor, produced by fermenting pure natural Mongolian honey. The gentle sweetness of honey blends with the scent of coriander, cloves, and medicinal herbs, creating a premium product for special occasions.\n\nFeatures: Fermented from 100% natural honey • Smooth taste with fragrant aroma • Suitable as a gift or for special occasions • Embodies the essence of Mongolia • Handcrafted\n\nServing: Serve chilled at 10–14°C."
                 }
             ]
@@ -856,14 +856,14 @@ export const translations = {
                     id: "oxymel",
                     title: "UNDRAM OXYMEL",
                     price: "30,000₮",
-                    image: "/images/oxymel.png",
+                    image: "/images/oxymel.webp",
                     description: "UNDRAM OXYMEL 是将蒙古纯天然蜂蜜、有机苹果醋和天然香料以传统方法调配而成的健康饮品。蜂蜜的营养成分、苹果醋的有机酸以及生姜和香料的活性成分，共同支持免疫力、消化功能和整体活力。\n\n原料：蜂蜜、有机苹果醋、生姜、香菜、丁香\n\n特点：含蒙古纯天然蜂蜜 • 含有机苹果醋 • 含生姜、香菜、丁香 • 无人工添加剂 • 适合日常饮用"
                 },
                 {
                     id: "honey-wine",
                     title: "UNDRAM HONEY WINE",
                     price: "20,000₮",
-                    image: "/images/wine.png",
+                    image: "/images/wine.webp",
                     description: "UNDRAM Honey Wine 是用蒙古纯天然蜂蜜发酵酿制的蜂蜜酒，具有独特的香气和风味。蜂蜜的柔和甜味与香菜、丁香和草药的香气完美融合，打造出适合特殊场合的高端产品。\n\n特点：100%天然蜂蜜发酵 • 口感柔和、香气怡人 • 适合作为礼品或特殊场合 • 融入蒙古特色 • 手工制作\n\n饮用建议：冷藏至10–14°C后饮用。"
                 }
             ]
@@ -1199,14 +1199,14 @@ export const translations = {
                     id: "oxymel",
                     title: "UNDRAM OXYMEL",
                     price: "30,000₮",
-                    image: "/images/oxymel.png",
+                    image: "/images/oxymel.webp",
                     description: "UNDRAM OXYMEL은 순수 몽골 꿀, 유기농 사과식초, 천연 향신료를 전통 방식으로 결합하여 만든 건강 음료입니다. 꿀의 영양소, 사과식초의 유기산, 생강과 향신료의 활성 성분이 면역력, 소화 및 전반적인 활력을 지원합니다.\n\n성분: 꿀, 유기농 사과식초, 생강, 고수, 정향\n\n특징: 순수 몽골 꿀 함유 • 유기농 사과식초 함유 • 생강, 고수, 정향 함유 • 인공 첨가물 없음 • 일상 음용에 적합"
                 },
                 {
                     id: "honey-wine",
                     title: "UNDRAM HONEY WINE",
                     price: "20,000₮",
-                    image: "/images/wine.png",
+                    image: "/images/wine.webp",
                     description: "UNDRAM Honey Wine은 순수 몽골 천연 꿀을 발효시켜 제조한 독특한 향과 맛의 꿀술(미드)입니다. 꿀의 부드러운 단맛이 고수, 정향, 약초의 향과 어우러져 특별한 자리를 위한 프리미엄 제품이 됩니다.\n\n특징: 100% 천연 꿀로 발효 • 부드러운 맛과 향기로운 아로마 • 선물 또는 특별한 자리에 적합 • 몽골의 정수가 담긴 • 수제 제작\n\n음용 방법: 10–14°C로 냉장 후 음용하세요."
                 }
             ]

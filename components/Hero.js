@@ -1,124 +1,163 @@
 "use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ArrowDown, Flower2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-import { translations } from "@/context/translations";
-
+import { ui } from "@/utils/storefront";
+import HeroSilk from "./effects/HeroSilk";
+const copy = {
+  mn: {
+    top: "БАЙГАЛИЙН ӨГӨӨЖ. МОНГОЛЫН АМТ.",
+    title: (
+      <>
+        Зэрлэг цэцэгсээс
+        <br />
+        бүтсэн <em>алтлаг</em>
+        <br />
+        амт.
+      </>
+    ),
+    body: "Хатан Туулын хөндийн зэрлэг цэцэгс, зуны нар, зөгийчний нямбай хөдөлмөрийг нэг шилэнд.",
+    note: "ТАЛААС ТАНЫ ШИРЭЭНД",
+    caption: "Цэвэр зөгийн бал",
+    sub: "Монголын зэрлэг цэцгийн амт",
+  },
+  en: {
+    top: "NATURE’S GIFT. MONGOLIA’S TASTE.",
+    title: (
+      <>
+        Wild flowers.
+        <br />
+        <em>Golden</em>
+        <br />
+        moments.
+      </>
+    ),
+    body: "Wildflowers of the Tuul River valley, summer sunshine and the care of our beekeepers. All in one jar.",
+    note: "FROM THE STEPPE TO YOUR TABLE",
+    caption: "Pure wildflower honey",
+    sub: "A taste of the Mongolian meadows",
+  },
+  zh: {
+    top: "自然的馈赠。蒙古的味道。",
+    title: (
+      <>
+        野花酿就
+        <br />
+        <em>金色</em>
+        <br />
+        滋味。
+      </>
+    ),
+    body: "图勒河谷的野花、夏日阳光和蜂农的用心，尽在一瓶蜂蜜。",
+    note: "从草原到您的餐桌",
+    caption: "纯净野花蜂蜜",
+    sub: "蒙古草原的滋味",
+  },
+  ko: {
+    top: "자연의 선물. 몽골의 맛.",
+    title: (
+      <>
+        야생화에서
+        <br />
+        <em>황금빛</em>
+        <br />
+        달콤함으로.
+      </>
+    ),
+    body: "툴강 계곡의 야생화, 여름 햇살, 양봉가의 정성을 한 병에 담았습니다.",
+    note: "초원에서 당신의 식탁까지",
+    caption: "순수 야생화 꿀",
+    sub: "몽골 초원의 맛",
+  },
+};
 export default function Hero() {
-    const { language } = useLanguage();
-    const t = translations[language].hero;
-
-    return (
-        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-
-
-            <div className="container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-16 items-center relative z-10">
-                {/* Text Content */}
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-center md:text-left"
-                >
-                    {/* Badge */}
-                    <span className="inline-block bg-gold-100 text-accent px-6 py-2 rounded-full text-sm font-bold tracking-wide uppercase mb-8 shadow-sm">
-                        {t.badge}
-                    </span>
-
-                    {/* Heading */}
-                    <h1 className="text-5xl md:text-7xl font-heading font-extrabold text-gold-900 mb-3 leading-tight">
-                        {t.title}
-                    </h1>
-                    <p className="text-lg md:text-xl text-gold-600 font-medium mb-8 tracking-wide">
-                        {t.titleHighlight}
-                    </p>
-
-                    {/* Subtitle */}
-                    <p className="text-lg md:text-xl text-accent/80 mb-10 max-w-lg mx-auto md:mx-0 font-body leading-relaxed">
-                        {t.subtitle}
-                    </p>
-
-                    {/* Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start mb-16">
-                        <Link
-                            href="#shop"
-                            className="group bg-gold-500 text-white px-8 py-4 rounded-full font-bold text-base tracking-wide hover:bg-gold-600 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-3 shadow-md"
-                        >
-                            {t.shopBtn}
-                            <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                        </Link>
-                        <Link
-                            href="#story"
-                            className="px-8 py-4 rounded-full font-bold text-base tracking-wide text-gold-900 border border-gold-900/20 hover:bg-gold-50 hover:border-gold-500 transition-all flex items-center justify-center"
-                        >
-                            {t.storyBtn}
-                        </Link>
-                    </div>
-
-                    {/* Awards Box */}
-                    <div className="bg-white border border-cream-100 p-6 rounded-xl shadow-sm inline-block text-left max-w-md">
-                        <p className="text-xs font-bold text-gold-500 uppercase tracking-widest mb-4 border-b border-cream-100 pb-2">
-                            {t.awards.title}
-                        </p>
-                        <ul className="flex flex-col gap-3 text-sm text-charcoal-800 font-medium">
-                            <li className="flex items-start gap-3">
-                                <span className="w-2 h-2 rounded-full bg-gold-500 mt-1.5 flex-shrink-0" />
-                                <span>{t.awards.award1}</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="w-2 h-2 rounded-full bg-gold-500 mt-1.5 flex-shrink-0" />
-                                <span>{t.awards.award2}</span>
-                            </li>
-                            {t.awards.award3 && (
-                                <li className="flex items-start gap-3">
-                                    <span className="w-2 h-2 rounded-full bg-gold-500 mt-1.5 flex-shrink-0" />
-                                    <span>{t.awards.award3}</span>
-                                </li>
-                            )}
-                        </ul>
-                    </div>
-                </motion.div>
-
-                {/* Image Content */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 0.2 }}
-                    className="relative h-[500px] md:h-[700px] w-full flex items-center justify-center"
-                >
-                    {/* Abstract Blob Background */}
-                    <div className="absolute inset-0 bg-gold-500/5 rounded-full blur-3xl transform scale-90" />
-
-                    {/* Main Image */}
-                    <div className="relative w-full h-full max-w-lg mx-auto">
-                        <div className="absolute inset-0 bg-gold-900/5 rounded-full blur-2xl z-0 transform translate-y-10 scale-90"></div>
-                        <Image
-                            src="/images/hero.jpg"
-                            alt="Undram Honey Jar"
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="object-contain drop-shadow-2xl z-10 hover:scale-105 transition-transform duration-700"
-                            priority
-                        />
-                    </div>
-
-                    {/* Floating Badge */}
-                    <motion.div
-                        initial={{ y: 30, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.8, duration: 0.8 }}
-                        className="absolute bottom-20 right-4 md:right-10 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gold-100 z-20"
-                    >
-                        <p className="text-gold-900 font-heading font-bold text-center leading-tight">
-                            <span className="text-4xl text-gold-500 block mb-1">100%</span>
-                            <span className="text-xs tracking-widest uppercase">{t.floatingBadge}</span>
-                        </p>
-                    </motion.div>
-                </motion.div>
+  const { language } = useLanguage();
+  const t = ui[language],
+    c = copy[language];
+  return (
+    <section className="hero">
+      <HeroSilk />
+      <div className="shell hero-grid">
+        <div className="hero-copy">
+          <p className="eyebrow">
+            <span className="tiny-rule" />
+            {c.top}
+          </p>
+          <h1>{c.title}</h1>
+          <p className="hero-description">{c.body}</p>
+          <Link href="/products" className="button button-dark">
+            {t.view}
+            <ArrowRight size={19} />
+          </Link>
+          <Link href="/story" className="hero-story-link">
+            {t.story}
+            <ArrowUpRightIcon />
+          </Link>
+          <div className="hero-origin">
+            <Flower2 size={26} strokeWidth={1} />
+            <span>{c.note}</span>
+          </div>
+        </div>
+        <div className="hero-visual">
+          <div className="hero-photo">
+            <Image
+              src="/optimized/honey-small.webp"
+              alt={c.caption}
+              fill
+              sizes="(max-width: 767px) 100vw, 55vw"
+              className="object-cover"
+              loading="eager"
+            />
+            <span className="hero-photo-index">01 — UNDRAM COLLECTION</span>
+            <div className="origin-seal">
+              <Flower2 size={28} strokeWidth={1} />
+              <span>
+                MONGOLIAN
+                <br />
+                WILDFLOWER
+                <br />
+                HONEY
+              </span>
             </div>
-        </section>
-    );
+          </div>
+          <div className="hero-caption">
+            <div>
+              <h2>{c.caption}</h2>
+              <p>{c.sub}</p>
+            </div>
+            <Link
+              href="/products/2"
+              aria-label={t.details}
+              className="circle-button"
+            >
+              <ArrowRight size={22} />
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="shell hero-bottom">
+        <span>UNDRAM · MONGOLIA</span>
+        <a href="#shop">
+          {t.collection}
+          <ArrowDown size={14} />
+        </a>
+        <span>ЗӨГИЙН БАЛ / HONEY</span>
+      </div>
+    </section>
+  );
+}
+function ArrowUpRightIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    >
+      <path d="M6 18 18 6M6 6h12v12" />
+    </svg>
+  );
 }

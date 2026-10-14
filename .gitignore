@@ -29,6 +29,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+firebase-debug.log*
 
 # env files (can opt-in for committing if needed)
 .env*
@@ -36,6 +37,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+.netlify
+.firebase/
 
 # typescript
 *.tsbuildinfo
@@ -44,3 +47,12 @@ next-env.d.ts
 # local build artifacts
 *.log
 /out.txt
+/undram-honey-netlify.zip
+/out.zip
+
+# original high-resolution design assets (kept locally, not deployed)
+/.asset-source/
+
+# Local export backup and original gallery sources
+/out 2/
+/зураг ундрам/

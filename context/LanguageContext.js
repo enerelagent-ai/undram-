@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 const LanguageContext = createContext();
 
@@ -8,40 +15,52 @@ const VALID_LANGS = ["mn", "en", "zh", "ko"];
 const STORAGE_KEY = "undram-lang";
 
 export function LanguageProvider({ children }) {
-    // Lazy initializer reads localStorage once synchronously — avoids a second render pass
-    const [language, setLanguageState] = useState(() => {
-        if (typeof window === "undefined") return "mn";
-        try {
-            const saved = localStorage.getItem(STORAGE_KEY);
-            return saved && VALID_LANGS.includes(saved) ? saved : "mn";
-        } catch {
-            return "mn";
-        }
-    });
+  const [language, setLanguageState] = useState("mn");
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      // Match the static Mongolian server snapshot before restoring a preference.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (VALID_LANGS.includes(saved)) setLanguageState(saved);
+    } catch {
+      /* Browser storage is optional. */
+    }
+  }, []);
 
-    const setLanguage = (lang) => {
-        if (!VALID_LANGS.includes(lang)) return;
-        setLanguageState(lang);
-        try {
-            localStorage.setItem(STORAGE_KEY, lang);
-        } catch {
-            // Language selection still works when persistence is unavailable.
-        }
-    };
+  const setLanguage = useCallback((lang) => {
+    if (!VALID_LANGS.includes(lang)) return;
+    setLanguageState(lang);
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+    } catch {
+      // Language selection still works when persistence is unavailable.
+    }
+  }, []);
 
-    const toggleLanguage = () => {
-        setLanguage(language === "mn" ? "en" : "mn");
-    };
+  const toggleLanguage = useCallback(() => {
+    setLanguageState((current) => (current === "mn" ? "en" : "mn"));
+  }, []);
 
-    return (
-        <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage }}>
-            {children}
-        </LanguageContext.Provider>
-    );
+  useEffect(() => {
+    document.documentElement.lang =
+      language === "zh" ? "zh-CN" : language === "ko" ? "ko" : language;
+  }, [language]);
+
+  const value = useMemo(
+    () => ({ language, setLanguage, toggleLanguage }),
+    [language, setLanguage, toggleLanguage],
+  );
+
+  return (
+    <LanguageContext.Provider value={value}>
+      {children}
+    </LanguageContext.Provider>
+  );
 }
 
 export function useLanguage() {
-    const context = useContext(LanguageContext);
-    if (!context) throw new Error("useLanguage must be used within LanguageProvider");
-    return context;
+  const context = useContext(LanguageContext);
+  if (!context)
+    throw new Error("useLanguage must be used within LanguageProvider");
+  return context;
 }

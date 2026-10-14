@@ -1,19 +1,10 @@
 "use client";
-
-import { usePathname } from "next/navigation";
 import Navbar from "@/components/Navbar";
-import VisualEffects from "@/components/VisualEffects";
-
+import { MotionConfig } from "framer-motion";
 export default function StorefrontWrapper() {
-    const pathname = usePathname();
-    const isAdmin = pathname?.startsWith("/admin");
-
-    if (isAdmin) return null;
-
-    return (
-        <>
-            <VisualEffects />
-            <Navbar />
-        </>
-    );
+  return (
+    <MotionConfig reducedMotion="user">
+      <Navbar />
+    </MotionConfig>
+  );
 }

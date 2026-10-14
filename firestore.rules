@@ -1,0 +1,50 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // The storefront catalog is public. Product management must use the
+    // Firebase Console or a trusted Admin SDK environment (which bypasses rules).
+    match /products/{productId} {
+      allow read: if true;
+      allow create, update, delete: if false;
+    }
+
+    // Checkout is public, but customers must never be able to inspect or mutate
+    // another customer's order. Treat every submitted value as untrusted in admin tools.
+    match /orders/{orderId} {
+      allow create: if
+        request.resource.data.keys().hasOnly([
+          'customer', 'items', 'subtotal', 'deliveryFee', 'grandTotal',
+          'status', 'createdAt'
+        ]) &&
+        request.resource.data.customer is map &&
+        request.resource.data.customer.keys().hasOnly(['fullName', 'phone', 'address']) &&
+        request.resource.data.customer.fullName is string &&
+        request.resource.data.customer.fullName.size() >= 2 &&
+        request.resource.data.customer.fullName.size() <= 80 &&
+        request.resource.data.customer.phone is string &&
+        request.resource.data.customer.phone.matches('^[0-9]{8}$') &&
+        request.resource.data.customer.address is string &&
+        request.resource.data.customer.address.size() >= 5 &&
+        request.resource.data.customer.address.size() <= 300 &&
+        request.resource.data.items is list &&
+        request.resource.data.items.size() >= 1 &&
+        request.resource.data.items.size() <= 30 &&
+        request.resource.data.subtotal is int &&
+        request.resource.data.subtotal >= 0 &&
+        request.resource.data.subtotal <= 100000000 &&
+        request.resource.data.deliveryFee == 8000 &&
+        request.resource.data.grandTotal ==
+          request.resource.data.subtotal + request.resource.data.deliveryFee &&
+        request.resource.data.status == 'Pending' &&
+        request.resource.data.createdAt == request.time;
+
+      allow read, update, delete: if false;
+    }
+
+    // New collections stay private until an explicit rule is added.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

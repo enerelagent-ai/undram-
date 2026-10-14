@@ -1,0 +1,11 @@
+{
+  "passed": [
+    "Blocked popup keeps order and cart",
+    "Simulated Messenger handoff ready state",
+    "Cart removal and empty state",
+    "Four language editorial routes have real images and no 360px overflow",
+    "WebGL unavailable static fallback"
+  ],
+  "errors": [],
+  "externalTraffic": "Blocked; no messages or orders delivered"
+}

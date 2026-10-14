@@ -25,7 +25,7 @@ export const blogPosts = {
             excerpt: "Өглөө бүр нэг халбага хушгатай UNDRAM бал идээд сар гаруй боллоо... Хушга бол байгалийн хамгийн хүчтэй 'тайвшруулагч + хамгаалагч'...",
             content: "Өглөө бүр нэг халбага хушгатай UNDRAM бал идээд сар гаруй боллоо... Хушга бол байгалийн хамгийн хүчтэй 'тайвшруулагч + хамгаалагч': Стресс дарна, Омега-3, Зүрхний судас цэвэрлэнэ.",
             tags: ["Health", "Tips"],
-            image: "/images/walnut-benefits.jpg",
+            image: "/images/honey-nuts.jpg",
         },
 
         {
@@ -35,7 +35,7 @@ export const blogPosts = {
             excerpt: "+35 хэмийн халуунд битүү хувцастай, 15–20 кг рам үүрнэ... Гэхдээ жаргал нь үгээр хэлэхийн аргагүй...",
             content: "+35 хэмийн халуунд битүү хувцастай, 15–20 кг рам үүрнэ... Гэхдээ жаргал нь үгээр хэлэхийн аргагүй. 2025 оны зун зөгийнүүд маань онцгой идэвхтэй байлаа.",
             tags: ["Beekeeper Life"],
-            image: "/images/harvest-diary.jpg",
+            image: "/images/harvest.jpg",
         },
         {
             id: "6",
@@ -62,7 +62,7 @@ export const blogPosts = {
             excerpt: "2024 он бидэнд үнэхээр өгөөжтэй байлаа... 2025 онд бид илүү том зорилготой: олон улсад гарах...",
             content: "2024 он бидэнд үнэхээр өгөөжтэй байлаа... 2025 онд бид илүү том зорилготой: олон улсад гарах, илүү олон гэр бүлд цэвэр амтыг хүргэх...",
             tags: ["Reflection", "Goals"],
-            image: "/images/2025-goals.jpg",
+            image: "/images/year-review-2024.jpg",
         },
 
     ],
@@ -74,7 +74,7 @@ export const blogPosts = {
             excerpt: "Undram Brand will bring the taste of Mongolia to Changwon and Seoul (Oct 23-31). Stay tuned for photos!",
             content: "Undram Brand will bring the taste of Mongolia to Changwon and Seoul (Oct 23-31). Stay tuned for photos! We are excited to showcase our premium honey products to the Korean market.",
             tags: ["Exhibition", "Export"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Exhibition+Korea",
+            image: "/images/korea-expo.jpg",
         },
         {
             id: "2",
@@ -83,7 +83,7 @@ export const blogPosts = {
             excerpt: "The bees' most precious gift. Limited stock available now.",
             content: "The bees' most precious gift. Limited stock available now. Every bite contains a bee's lifetime of work and the pure essence of nature.",
             tags: ["Product", "Honeycomb"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Honeycomb",
+            image: "/images/honeycomb-news.jpg",
         },
         {
             id: "3",
@@ -92,7 +92,7 @@ export const blogPosts = {
             excerpt: "The ultimate stress reliever. Omega-3 and antioxidants in a jar.",
             content: "The ultimate stress reliever. Omega-3 and antioxidants in a jar. Just one spoon a day can help reduce stress and improve heart health.",
             tags: ["Health", "Tips"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Pine+Nut+Honey",
+            image: "/images/honey-nuts.jpg",
         },
 
         {
@@ -102,7 +102,7 @@ export const blogPosts = {
             excerpt: "The purest honey from the wildflowers of Tuv province is being bottled now.",
             content: "The purest honey from the wildflowers of Tuv province is being bottled now. It was a hot summer, but the bees were incredibly active.",
             tags: ["Beekeeper Life"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Harvest+Day",
+            image: "/images/harvest.jpg",
         },
         {
             id: "6",
@@ -111,7 +111,7 @@ export const blogPosts = {
             excerpt: "Undram supported the National Sheep Shearing competition.",
             content: "Undram supported the National Sheep Shearing competition. We were proud to represent Arkhust sum and share our honey with the community.",
             tags: ["Community", "Event"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Golden+Shears",
+            image: "/images/golden-shears-event.jpg",
         },
         {
             id: "7",
@@ -120,7 +120,7 @@ export const blogPosts = {
             excerpt: "Chinese customers love Mongolian honey. Successfully established new partnerships.",
             content: "Chinese customers love Mongolian honey. Successfully established new partnerships. We are thrilled to see our brand growing in the international market.",
             tags: ["Export", "China"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Hohhot+Expo",
+            image: "/images/hohhot-expo.jpg",
         },
         {
             id: "8",
@@ -129,7 +129,7 @@ export const blogPosts = {
             excerpt: "Exporting to the world and keeping our natural roots.",
             content: "Exporting to the world and keeping our natural roots. 2024 was a year of gratitude, and 2025 will be a year of expansion.",
             tags: ["Reflection", "Goals"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=New+Year+2025",
+            image: "/images/year-review-2024.jpg",
         },
 
     ],
@@ -141,7 +141,7 @@ export const blogPosts = {
             excerpt: "Undram品牌将把蒙古的味道带到昌原和首尔（10月23日至31日）。敬请期待照片！",
             content: "Undram品牌将把蒙古的味道带到昌原和首尔（10月23日至31日）。敬请期待照片！我们很高兴向韩国市场展示我们的优质蜂蜜产品。",
             tags: ["Exhibition", "Export"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Exhibition+Korea",
+            image: "/images/korea-expo.jpg",
         },
         {
             id: "2",
@@ -150,7 +150,7 @@ export const blogPosts = {
             excerpt: "蜜蜂最珍贵的礼物。现已限量发售。",
             content: "蜜蜂最珍贵的礼物。现已限量发售。每一口都包含着蜜蜂一生的辛勤劳动和纯净的自然精华。",
             tags: ["Product", "Honeycomb"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Honeycomb",
+            image: "/images/honeycomb-news.jpg",
         },
         {
             id: "3",
@@ -159,7 +159,7 @@ export const blogPosts = {
             excerpt: "终极减压神器。一罐富含Omega-3和抗氧化剂。",
             content: "终极减压神器。一罐富含Omega-3和抗氧化剂。每天一勺有助于减轻压力，改善心脏健康。",
             tags: ["Health", "Tips"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Pine+Nut+Honey",
+            image: "/images/honey-nuts.jpg",
         },
 
         {
@@ -169,7 +169,7 @@ export const blogPosts = {
             excerpt: "来自中央省野花的纯净蜂蜜正在装瓶中。",
             content: "来自中央省野花的纯净蜂蜜正在装瓶中。那是一个炎热的夏天，但蜜蜂们异常活跃。",
             tags: ["Beekeeper Life"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Harvest+Day",
+            image: "/images/harvest.jpg",
         },
         {
             id: "6",
@@ -178,7 +178,7 @@ export const blogPosts = {
             excerpt: "Undram支持了全国剪羊毛比赛。",
             content: "Undram支持了全国剪羊毛比赛。我们很自豪能代表Arkhust苏木，并与社区分享我们的蜂蜜。",
             tags: ["Community", "Event"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Golden+Shears",
+            image: "/images/golden-shears-event.jpg",
         },
         {
             id: "7",
@@ -187,7 +187,7 @@ export const blogPosts = {
             excerpt: "中国顾客喜爱蒙古蜂蜜。成功建立了新的合作伙伴关系。",
             content: "中国顾客喜爱蒙古蜂蜜。成功建立了新的合作伙伴关系。我们很高兴看到我们的品牌在国际市场上不断发展。",
             tags: ["Export", "China"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Hohhot+Expo",
+            image: "/images/hohhot-expo.jpg",
         },
         {
             id: "8",
@@ -196,7 +196,7 @@ export const blogPosts = {
             excerpt: "向世界出口，保持我们的自然之根。",
             content: "向世界出口，保持我们的自然之根。2024年是感恩的一年，2025年将是扩张的一年。",
             tags: ["Reflection", "Goals"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=New+Year+2025",
+            image: "/images/year-review-2024.jpg",
         },
 
     ],
@@ -208,7 +208,7 @@ export const blogPosts = {
             excerpt: "Undram 브랜드가 몽골의 맛을 창원과 서울로 가져옵니다 (10월 23일-31일). 사진을 기대해주세요!",
             content: "Undram 브랜드가 몽골의 맛을 창원과 서울로 가져옵니다 (10월 23일-31일). 사진을 기대해주세요! 한국 시장에 우리의 프리미엄 꿀 제품을 선보이게 되어 기쁩니다.",
             tags: ["Exhibition", "Export"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Exhibition+Korea",
+            image: "/images/korea-expo.jpg",
         },
         {
             id: "2",
@@ -217,7 +217,7 @@ export const blogPosts = {
             excerpt: "벌들의 가장 소중한 선물. 지금 한정 수량으로 만나보세요.",
             content: "벌들의 가장 소중한 선물. 지금 한정 수량으로 만나보세요. 모든 한 입에는 벌의 평생의 노력과 자연의 순수한 정수가 담겨 있습니다.",
             tags: ["Product", "Honeycomb"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Honeycomb",
+            image: "/images/honeycomb-news.jpg",
         },
         {
             id: "3",
@@ -226,7 +226,7 @@ export const blogPosts = {
             excerpt: "최고의 스트레스 해소제. 오메가-3와 항산화제가 한 병에.",
             content: "최고의 스트레스 해소제. 오메가-3와 항산화제가 한 병에. 하루 한 숟가락으로 스트레스를 줄이고 심장 건강을 개선하세요.",
             tags: ["Health", "Tips"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Pine+Nut+Honey",
+            image: "/images/honey-nuts.jpg",
         },
 
         {
@@ -236,7 +236,7 @@ export const blogPosts = {
             excerpt: "투브 지방 야생화에서 채취한 가장 순수한 꿀이 지금 병에 담기고 있습니다.",
             content: "투브 지방 야생화에서 채취한 가장 순수한 꿀이 지금 병에 담기고 있습니다. 무더운 여름이었지만 벌들은 놀라울 정도로 활발했습니다.",
             tags: ["Beekeeper Life"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Harvest+Day",
+            image: "/images/harvest.jpg",
         },
         {
             id: "6",
@@ -245,7 +245,7 @@ export const blogPosts = {
             excerpt: "Undram이 전국 양털 깎기 대회를 후원했습니다.",
             content: "Undram이 전국 양털 깎기 대회를 후원했습니다. 우리는 아르후스트 솜을 대표하여 지역 사회와 꿀을 나눌 수 있어 자랑스러웠습니다.",
             tags: ["Community", "Event"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Golden+Shears",
+            image: "/images/golden-shears-event.jpg",
         },
         {
             id: "7",
@@ -254,7 +254,7 @@ export const blogPosts = {
             excerpt: "중국 고객들이 몽골 꿀을 사랑합니다. 새로운 파트너십을 성공적으로 구축했습니다.",
             content: "중국 고객들이 몽골 꿀을 사랑합니다. 새로운 파트너십을 성공적으로 구축했습니다. 국제 시장에서 우리 브랜드가 성장하는 것을 보게 되어 기쁩니다.",
             tags: ["Export", "China"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=Hohhot+Expo",
+            image: "/images/hohhot-expo.jpg",
         },
         {
             id: "8",
@@ -263,7 +263,7 @@ export const blogPosts = {
             excerpt: "세계로 수출하며 우리의 자연적 뿌리를 지킵니다.",
             content: "세계로 수출하며 우리의 자연적 뿌리를 지킵니다. 2024년은 감사의 해였고, 2025년은 확장의 해가 될 것입니다.",
             tags: ["Reflection", "Goals"],
-            image: "https://placehold.co/800x600/F59E0B/FFFFFF?text=New+Year+2025",
+            image: "/images/year-review-2024.jpg",
         },
 
     ],

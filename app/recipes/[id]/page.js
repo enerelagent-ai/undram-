@@ -1,4 +1,16 @@
 import RecipeDetailClient from "./RecipeDetailClient";
+import { translations } from "@/context/translations";
+
+export async function generateMetadata({ params }) {
+    const { id } = await params;
+    const recipe = translations.mn.recipes?.items?.find((item) => String(item.id) === id);
+    if (!recipe) return { title: "Жор олдсонгүй" };
+    return {
+        title: recipe.title,
+        description: recipe.description,
+        openGraph: { title: recipe.title, description: recipe.description, images: [recipe.image] },
+    };
+}
 
 export async function generateStaticParams() {
     // Generate paths for all recipes (IDs 1-9)

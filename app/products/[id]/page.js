@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductDetailClient from "./ProductDetailClient"; // we will create this
+import { translations } from "@/context/translations";
 
 const PRODUCT_META = {
     "12": {
@@ -10,17 +11,23 @@ const PRODUCT_META = {
     "oxymel": {
         title: "UNDRAM OXYMEL | Mongolian Honey Drink",
         description: "Зөгийн бал, органик алимны цуу, цагаан гаатай уламжлалт эрүүл мэндийн ундаа. 330мл.",
-        image: "/images/oxymel.png",
+        image: "/images/oxymel.webp",
     },
     "honey-wine": {
         title: "UNDRAM HONEY WINE | Mongolian Mead",
         description: "Монголын цэвэр зөгийн балаар исгэсэн дээд зэрэглэлийн балт дарс. 330мл.",
-        image: "/images/wine.png",
+        image: "/images/wine.webp",
     },
 };
 
 export async function generateMetadata({ params }) {
-    const meta = PRODUCT_META[params.id];
+    const { id } = await params;
+    const product = translations.mn.products.items.find((item) => String(item.id) === id);
+    const meta = PRODUCT_META[id] || (product && {
+        title: product.title,
+        description: product.description.replace(/\n/g, " ").slice(0, 160),
+        image: product.image,
+    });
     if (meta) {
         return {
             title: meta.title,
@@ -28,7 +35,7 @@ export async function generateMetadata({ params }) {
             openGraph: {
                 title: meta.title,
                 description: meta.description,
-                images: [{ url: meta.image, width: 1200, height: 630, alt: "Байгалийн хосгүй бэлэг – зөгийн балны рамтай цэцгэн бэлгийн багц" }],
+                images: [{ url: meta.image, alt: product?.alt || meta.title }],
                 type: "website",
             },
             twitter: {
@@ -46,11 +53,29 @@ export async function generateMetadata({ params }) {
 }
 
 export async function generateStaticParams() {
-    // Generate static routes dynamically based on initial static dataset or fallback
-    return ["1", "2", "3", "4", "5", "6", "7", "8", "_", "10", "11", "12", "13", "14", "15", "honey-set-6", "oxymel", "honey-wine"].map(id => ({ id }));
+    return translations.mn.products.items.map((product) => ({ id: String(product.id) }));
 }
 
-export default function Page() {
-    return <ProductDetailClient />;
-}
+export default async function Page({ params }) {
+    const { id } = await params;
+    const product = translations.mn.products.items.find((item) => String(item.id) === id);
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://undram-honey.vercel.app";
+    const numericPrice = product ? Number(String(product.price).replace(/[^0-9]/g, "")) : 0;
+    const jsonLd = product && {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: product.title,
+        image: `${siteUrl}${product.image}`,
+        description: product.description.replace(/\n/g, " "),
+        brand: { "@type": "Brand", name: "Undram" },
+        offers: {
+            "@type": "Offer",
+            url: `${siteUrl}/products/${id}`,
+            priceCurrency: "MNT",
+            price: numericPrice,
+            availability: "https://schema.org/InStock",
+        },
+    };
 
+    return <>{jsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />}<ProductDetailClient /></>;
+}
