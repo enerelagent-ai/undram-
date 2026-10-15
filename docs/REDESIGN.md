@@ -23,6 +23,14 @@ The full upstream license is retained in `components/effects/LICENSE.react-bits.
 
 `node scripts/optimize-storefront.mjs` generates static WebP assets without modifying originals. Gallery images use 1100px copies; product/editorial images use up to 1600px copies. Images have aspect-ratio containers and responsive sizes. Gallery and secondary images load lazily. The original gallery is preserved.
 
+## Video gallery
+
+The homepage `#films` section sits between the brand story and photo gallery. All 14 gallery MP4s and `honey-pour.mp4` are accessible through a responsive scroll-snap film strip with localized titles, durations and play buttons. `data/videos.json` records the actual decoded dimensions/durations and curated display order; the source gallery's older landscape metadata is not used for playback.
+
+`public/video-posters/` contains WebP frames extracted from the corresponding clips (at two seconds, or one-third of a shorter clip). The 15 posters total approximately 724 KB. Only poster images load while browsing; the player and selected MP4 load on interaction. Videos retain their original aspect ratio in the modal, with native playback/audio/fullscreen controls, previous/next buttons, Escape dismissal, focus trapping/restoration and a direct-file fallback if loading fails. Original MP4s are unchanged.
+
+Video QA: all 15 clips decoded and played in Chrome; 360/768/1440px layouts, all four languages, carousel navigation, modal dismissal/focus restoration, zero MP4 requests before opening, and a simulated 404 fallback passed. No browser JavaScript errors. Lint, TypeScript and the 45-page production export passed. Results: `docs/video-checks.json`; screenshots: `docs/screenshots/films-*.png`.
+
 ## Commerce
 
 The existing local cart, fixed 8,000₮ delivery fee, validation, bank information and Messenger handoff remain. Browser preferences are restored after hydration. Catalog, product detail and homepage share the same live-product merge. Firebase prices/images override matching static products while localized text and known static routes remain intact. New unknown Firebase IDs cannot be added as routable products without rebuilding a static export.

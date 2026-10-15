@@ -3,6 +3,7 @@ import TrustSection from "@/components/TrustSection";
 import ProductShowcase from "@/components/ProductShowcase";
 import StorySection from "@/components/StorySection";
 import HarvestMediaSection from "@/components/HarvestMediaSection";
+import VideoGallery from "@/components/VideoGallery";
 import GiftSection from "@/components/GiftSection";
 import RecipesSection from "@/components/RecipesSection";
 import LatestNewsSection from "@/components/LatestNewsSection";
@@ -15,6 +16,7 @@ export default function Home() {
       <TrustSection />
       <ProductShowcase />
       <StorySection />
+      <VideoGallery />
       <HarvestMediaSection />
       <GiftSection />
       <RecipesSection />

@@ -1,0 +1,125 @@
+{
+  "playback": [
+    {
+      "src": "/gallery/video-005.mp4",
+      "width": 360,
+      "height": 640,
+      "duration": 8,
+      "currentTime": 0.014921
+    },
+    {
+      "src": "/gallery/video-007.mp4",
+      "width": 360,
+      "height": 640,
+      "duration": 8,
+      "currentTime": 0.018623
+    },
+    {
+      "src": "/gallery/video-013.mp4",
+      "width": 360,
+      "height": 640,
+      "duration": 8,
+      "currentTime": 0.009261
+    },
+    {
+      "src": "/media/honey-pour.mp4",
+      "width": 272,
+      "height": 480,
+      "duration": 8,
+      "currentTime": 0.165459
+    },
+    {
+      "src": "/gallery/video-001.mp4",
+      "width": 360,
+      "height": 640,
+      "duration": 8,
+      "currentTime": 0.014245
+    },
+    {
+      "src": "/gallery/video-002.mp4",
+      "width": 360,
+      "height": 640,
+      "duration": 8,
+      "currentTime": 0.011121
+    },
+    {
+      "src": "/gallery/video-003.mp4",
+      "width": 480,
+      "height": 640,
+      "duration": 0.5,
+      "currentTime": 0.021025
+    },
+    {
+      "src": "/gallery/video-004.mp4",
+      "width": 360,
+      "height": 640,
+      "duration": 8,
+      "currentTime": 0.01491
+    },
+    {
+      "src": "/gallery/video-006.mp4",
+      "width": 272,
+      "height": 480,
+      "duration": 8,
+      "currentTime": 0.017953
+    },
+    {
+      "src": "/gallery/video-008.mp4",
+      "width": 360,
+      "height": 640,
+      "duration": 8,
+      "currentTime": 0.01424
+    },
+    {
+      "src": "/gallery/video-009.mp4",
+      "width": 360,
+      "height": 640,
+      "duration": 8,
+      "currentTime": 0.016142
+    },
+    {
+      "src": "/gallery/video-010.mp4",
+      "width": 360,
+      "height": 640,
+      "duration": 4.9,
+      "currentTime": 0.013757
+    },
+    {
+      "src": "/gallery/video-011.mp4",
+      "width": 360,
+      "height": 640,
+      "duration": 8,
+      "currentTime": 0.016102
+    },
+    {
+      "src": "/gallery/video-012.mp4",
+      "width": 640,
+      "height": 360,
+      "duration": 8,
+      "currentTime": 0.011041
+    },
+    {
+      "src": "/gallery/video-014.mp4",
+      "width": 360,
+      "height": 640,
+      "duration": 8,
+      "currentTime": 0.020626
+    }
+  ],
+  "sizes": [
+    1440,
+    768,
+    360
+  ],
+  "languages": [
+    "mn",
+    "en",
+    "zh",
+    "ko"
+  ],
+  "noVideoDownloadBeforeInteraction": true,
+  "focusRestored": true,
+  "escapeCloses": true,
+  "errorFallback": true,
+  "errors": []
+}

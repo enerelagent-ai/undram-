@@ -1,0 +1,197 @@
+[
+  {
+    "src": "/gallery/video-005.mp4",
+    "poster": "/video-posters/video-005.webp",
+    "width": 360,
+    "height": 640,
+    "duration": 8,
+    "title": {
+      "mn": "Шил бүрд шингэсэн хөдөлмөр",
+      "en": "Care in every jar",
+      "zh": "每一瓶的用心",
+      "ko": "한 병에 담긴 정성"
+    }
+  },
+  {
+    "src": "/gallery/video-007.mp4",
+    "poster": "/video-posters/video-007.webp",
+    "width": 360,
+    "height": 640,
+    "duration": 8,
+    "title": {
+      "mn": "Үүрэн дэх амьдрал",
+      "en": "Life in the hive",
+      "zh": "蜂巢里的生活",
+      "ko": "벌통 속 일상"
+    }
+  },
+  {
+    "src": "/gallery/video-013.mp4",
+    "poster": "/video-posters/video-013.webp",
+    "width": 360,
+    "height": 640,
+    "duration": 8,
+    "title": {
+      "mn": "Сархинагаас эхлэх түүх",
+      "en": "A story in the honeycomb",
+      "zh": "蜂巢里的故事",
+      "ko": "벌집에서 시작된 이야기"
+    }
+  },
+  {
+    "src": "/media/honey-pour.mp4",
+    "poster": "/video-posters/honey-pour.webp",
+    "width": 272,
+    "height": 480,
+    "duration": 8,
+    "title": {
+      "mn": "Алтлаг урсгал",
+      "en": "A golden stream",
+      "zh": "金色流淌",
+      "ko": "황금빛 흐름"
+    }
+  },
+  {
+    "src": "/gallery/video-001.mp4",
+    "poster": "/video-posters/video-001.webp",
+    "width": 360,
+    "height": 640,
+    "duration": 8,
+    "title": {
+      "mn": "Самартай амт",
+      "en": "A nutty pairing",
+      "zh": "坚果与蜂蜜",
+      "ko": "견과와 꿀"
+    }
+  },
+  {
+    "src": "/gallery/video-002.mp4",
+    "poster": "/video-posters/video-002.webp",
+    "width": 360,
+    "height": 640,
+    "duration": 8,
+    "title": {
+      "mn": "Шинэхэн бал",
+      "en": "Fresh honey",
+      "zh": "新鲜蜂蜜",
+      "ko": "신선한 꿀"
+    }
+  },
+  {
+    "src": "/gallery/video-003.mp4",
+    "poster": "/video-posters/video-003.webp",
+    "width": 480,
+    "height": 640,
+    "duration": 0.5,
+    "title": {
+      "mn": "Зөгийчний нэг агшин",
+      "en": "A beekeeper’s moment",
+      "zh": "蜂农的一刻",
+      "ko": "양봉가의 순간"
+    }
+  },
+  {
+    "src": "/gallery/video-004.mp4",
+    "poster": "/video-posters/video-004.webp",
+    "width": 360,
+    "height": 640,
+    "duration": 8,
+    "title": {
+      "mn": "Бал хураах мөч",
+      "en": "The honey harvest",
+      "zh": "收蜜时刻",
+      "ko": "꿀을 수확하는 순간"
+    }
+  },
+  {
+    "src": "/gallery/video-006.mp4",
+    "poster": "/video-posters/video-006.webp",
+    "width": 272,
+    "height": 480,
+    "duration": 8,
+    "title": {
+      "mn": "Байгалийн өтгөн амт",
+      "en": "Naturally rich",
+      "zh": "自然的醇厚",
+      "ko": "자연의 진한 맛"
+    }
+  },
+  {
+    "src": "/gallery/video-008.mp4",
+    "poster": "/video-posters/video-008.webp",
+    "width": 360,
+    "height": 640,
+    "duration": 8,
+    "title": {
+      "mn": "Зөгийчний гар",
+      "en": "The beekeeper’s hands",
+      "zh": "蜂农的双手",
+      "ko": "양봉가의 손길"
+    }
+  },
+  {
+    "src": "/gallery/video-009.mp4",
+    "poster": "/video-posters/video-009.webp",
+    "width": 360,
+    "height": 640,
+    "duration": 8,
+    "title": {
+      "mn": "Талын зөгийнүүд",
+      "en": "Bees of the steppe",
+      "zh": "草原蜜蜂",
+      "ko": "초원의 벌들"
+    }
+  },
+  {
+    "src": "/gallery/video-010.mp4",
+    "poster": "/video-posters/video-010.webp",
+    "width": 360,
+    "height": 640,
+    "duration": 4.9,
+    "title": {
+      "mn": "Балны алтан өнгө",
+      "en": "The colour of honey",
+      "zh": "蜂蜜的金色",
+      "ko": "꿀의 황금빛"
+    }
+  },
+  {
+    "src": "/gallery/video-011.mp4",
+    "poster": "/video-posters/video-011.webp",
+    "width": 360,
+    "height": 640,
+    "duration": 8,
+    "title": {
+      "mn": "Бяцхан хөдөлмөрчид",
+      "en": "The little workers",
+      "zh": "勤劳的小蜜蜂",
+      "ko": "작은 일꾼들"
+    }
+  },
+  {
+    "src": "/gallery/video-012.mp4",
+    "poster": "/video-posters/video-012.webp",
+    "width": 640,
+    "height": 360,
+    "duration": 8,
+    "title": {
+      "mn": "Зөгийн үүрийн дэргэд",
+      "en": "Beside the hive",
+      "zh": "蜂巢旁",
+      "ko": "벌통 곁에서"
+    }
+  },
+  {
+    "src": "/gallery/video-014.mp4",
+    "poster": "/video-posters/video-014.webp",
+    "width": 360,
+    "height": 640,
+    "duration": 8,
+    "title": {
+      "mn": "Бал ялгах ажил",
+      "en": "Extracting the honey",
+      "zh": "取蜜工序",
+      "ko": "꿀을 추출하는 과정"
+    }
+  }
+]
