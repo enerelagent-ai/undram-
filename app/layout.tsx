@@ -1,9 +1,31 @@
 import "./globals.css";
+import localFont from "next/font/local";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { CartProvider } from "@/context/CartContext";
 import StorefrontWrapper from "@/components/StorefrontWrapper";
 import Footer from "@/components/Footer";
 import type { Metadata, Viewport } from "next";
+
+const displayFont = localFont({
+  src: [
+    { path: "./fonts/CormorantGaramond-Regular.woff2", weight: "300 700", style: "normal" },
+    { path: "./fonts/CormorantGaramond-Italic.woff2", weight: "300 700", style: "italic" },
+  ],
+  variable: "--font-undram-display",
+  display: "swap",
+  adjustFontFallback: "Times New Roman",
+  fallback: ["Georgia", "Times New Roman", "serif"],
+});
+
+const bodyFont = localFont({
+  src: "./fonts/Manrope.woff2",
+  weight: "200 800",
+  style: "normal",
+  variable: "--font-undram-body",
+  display: "swap",
+  adjustFontFallback: "Arial",
+  fallback: ["Arial", "Helvetica Neue", "sans-serif"],
+});
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
@@ -72,7 +94,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="mn">
+    <html lang="mn" className={`${displayFont.variable} ${bodyFont.variable}`}>
       <body className="antialiased">
         <script
           type="application/ld+json"

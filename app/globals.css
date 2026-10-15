@@ -20,9 +20,11 @@
   --color-charcoal-900: #2a1c12;
   --color-cream-50: #f6f1e7;
   --color-cream-100: #eee7d9;
-  --font-heading: Georgia, "Times New Roman", serif;
-  --font-body: Arial, "Helvetica Neue", sans-serif;
-  --font-price: Arial, sans-serif;
+}
+@theme inline {
+  --font-heading: var(--font-undram-display), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-undram-body), Arial, "Helvetica Neue", sans-serif;
+  --font-price: var(--font-undram-body), Arial, sans-serif;
 }
 :root {
   --ivory: #f6f1e7;
@@ -97,9 +99,9 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.13;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   color: inherit;
 }
 h1 {
@@ -113,7 +115,7 @@ h3 {
 }
 em {
   color: #936018;
-  font-weight: 400;
+  font-weight: 500;
 }
 p {
   margin-bottom: 0;
@@ -267,7 +269,8 @@ select {
   line-height: 1;
 }
 .wordmark > span {
-  font-family: Georgia, serif;
+  font-family: var(--font-heading);
+  font-weight: 600;
   font-size: 33px;
   letter-spacing: 0.025em;
 }
@@ -351,11 +354,11 @@ select {
   gap: 18px;
   border-bottom: 1px solid var(--line);
   padding: 20px 0;
-  font-family: Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 26px;
 }
 .mobile-menu > a small {
-  font: 10px Arial;
+  font: 10px var(--font-body);
   color: var(--muted);
 }
 .mobile-menu > a svg {
@@ -407,9 +410,9 @@ select {
   background: #ac7a34;
 }
 .hero h1 {
-  font-size: clamp(48px, 5.2vw, 78px);
+  font-size: clamp(52px, 5.8vw, 88px);
   line-height: 1.09;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.025em;
   margin: 24px 0;
 }
 .hero h1 em {
@@ -602,7 +605,7 @@ select {
   margin: 19px 0 9px;
 }
 .product-card h3 {
-  font-size: 23px;
+  font-size: 27px;
   line-height: 1.25;
   margin: 0 0 20px;
   letter-spacing: -0.025em;
@@ -1010,24 +1013,25 @@ select {
   color: #bdbbac;
 }
 .footer-phone {
-  font-family: Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 25px;
 }
 .footer-contact .text-link {
   align-self: flex-start;
 }
 .footer-wordmark {
-  font-family: Georgia, serif;
+  font-family: var(--font-heading);
+  font-weight: 500;
   font-size: clamp(68px, 16.5vw, 240px);
   line-height: 1.18;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.035em;
   position: relative;
   margin-top: 45px;
   border-bottom: 1px solid #575a47;
   overflow: hidden;
 }
 .footer-wordmark > span {
-  font: 20px Arial;
+  font: 20px var(--font-body);
   vertical-align: super;
   margin-left: 14px;
 }
@@ -1762,7 +1766,7 @@ select {
     margin-bottom: 18px;
   }
   .hero h1 {
-    font-size: clamp(44px, 11.5vw, 68px);
+    font-size: clamp(48px, 12.5vw, 72px);
     line-height: 1.12;
     margin: 20px 0;
   }

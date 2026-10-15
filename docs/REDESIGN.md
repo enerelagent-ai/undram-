@@ -4,7 +4,7 @@ The existing Next.js 16 / React 19 static-export application remains in place. L
 
 ## Design
 
-Warm ivory `#F6F1E7`, amber `#C88A24`, deep brown `#2A1C12`, olive `#697153`. Georgia supports Mongolian Cyrillic display text; Arial and system fallbacks keep body copy readable without a remote font dependency. Text amber is darker than the decorative amber for contrast. Shared tokens, spacing, buttons, product cards, editorial cards, page headings, gallery/lightbox and footer live in `app/globals.css` and `components/`.
+Warm ivory `#F6F1E7`, amber `#C88A24`, deep brown `#2A1C12`, olive `#697153`. Locally hosted Cormorant Garamond variable fonts (upright and true italic) provide the display typography; Manrope provides body text and prices. Both fonts include the full Mongolian Cyrillic alphabet and the ₮ sign. Next.js local font loading supplies preload, swap and adjusted fallback metrics. Text amber is darker than the decorative amber for contrast. Shared tokens, spacing, buttons, product cards, editorial cards, page headings, gallery/lightbox and footer live in `app/globals.css` and `components/`.
 
 Home, catalog, product detail, story, stores, recipes and recipe detail, news and article detail, contact, 404, loading and error states use the same system. Four languages and all static product routes remain available. Original source data and prices are retained. No reviews, ratings, certificates or new health claims were added.
 
