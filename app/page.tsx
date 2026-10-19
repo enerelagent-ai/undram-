@@ -9,19 +9,23 @@ import RecipesSection from "@/components/RecipesSection";
 import LatestNewsSection from "@/components/LatestNewsSection";
 import FaqSection from "@/components/FaqSection";
 import PartnersSection from "@/components/PartnersSection";
+import ShopCategories from "@/components/ShopCategories";
+import OrderGuide from "@/components/OrderGuide";
 export default function Home() {
   return (
-    <main>
+    <main className="shop-home">
       <Hero />
       <TrustSection />
+      <ShopCategories />
       <ProductShowcase />
+      <GiftSection />
+      <OrderGuide />
+      <FaqSection />
       <StorySection />
       <VideoGallery />
       <HarvestMediaSection />
-      <GiftSection />
       <RecipesSection />
       <LatestNewsSection />
-      <FaqSection />
       <PartnersSection />
     </main>
   );

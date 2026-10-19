@@ -1,5 +1,7 @@
 "use client";
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { Search, ShoppingBag } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import PageHeading from "@/components/PageHeading";
@@ -7,12 +9,27 @@ import useProducts from "@/hooks/useProducts";
 import { useLanguage } from "@/context/LanguageContext";
 import { ui, categoryOf } from "@/utils/storefront";
 import { parsePrice } from "@/utils/cart.mjs";
+import { shopCopy, shopCategories } from "@/utils/shopCopy";
 export default function ProductsPage() {
+  return <Suspense fallback={<CatalogLoading />}><CatalogFromQuery /></Suspense>;
+}
+function CatalogLoading() {
+  const { language } = useLanguage();
+  return <main className="shell page-content"><p className="catalog-loading" role="status">{shopCopy[language].loading}</p></main>;
+}
+function CatalogFromQuery() {
+  const params = useSearchParams();
+  const category = shopCategories.includes(params.get("category")) ? params.get("category") : "all";
+  const query = (params.get("q") || "").slice(0, 100);
+  return <Catalog key={JSON.stringify([category, query])} initialCategory={category} initialQuery={query} />;
+}
+function Catalog({ initialCategory, initialQuery }) {
   const { language } = useLanguage();
   const t = ui[language];
+  const c = shopCopy[language];
   const products = useProducts();
-  const [category, setCategory] = useState("all");
-  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState(initialCategory);
+  const [search, setSearch] = useState(initialQuery);
   const [sort, setSort] = useState("featured");
   const filtered = products
     .filter(
@@ -28,10 +45,11 @@ export default function ProductsPage() {
           : 0,
     );
   return (
-    <main className="shell page-content">
+    <main className="shell page-content shop-catalog">
+      <nav className="breadcrumb" aria-label={t.home}><Link href="/">{t.home}</Link><span>/</span><span>{t.allProducts}</span></nav>
       <PageHeading
         eyebrow={t.collection}
-        title={t.products}
+        title={t.allProducts}
         description={
           language === "mn"
             ? "Өдөр тутмын амт, сэтгэл шингэсэн бэлэг. Өөрт тохирох сонголтоо олоорой."
@@ -40,7 +58,9 @@ export default function ProductsPage() {
               : t.collection
         }
       />
-      <div className="catalog-toolbar">
+      <div className="shop-catalog-layout">
+        <aside className="shop-catalog-sidebar">
+          <h2>{c.categories}</h2>
         <div className="filter-tabs" aria-label={t.products}>
           {["all", "honey", "gifts", "drinks", "craft"].map((c) => (
             <button
@@ -49,10 +69,14 @@ export default function ProductsPage() {
               aria-pressed={category === c}
               onClick={() => setCategory(c)}
             >
-              {t[c]}
+              <span>{t[c]}</span><span>{c === "all" ? products.length : products.filter(p => categoryOf(p.id) === c).length}</span>
             </button>
           ))}
         </div>
+          <div className="catalog-help"><strong>{c.delivery}</strong><p>{c.deliveryBody}</p><Link href="/#how-to-order">{c.order}</Link></div>
+        </aside>
+        <div className="shop-catalog-results">
+      <div className="catalog-toolbar">
         <div className="catalog-inputs">
           <label className="search-field">
             <Search size={16} />
@@ -102,6 +126,8 @@ export default function ProductsPage() {
           </button>
         </div>
       )}
+        </div>
+      </div>
     </main>
   );
 }

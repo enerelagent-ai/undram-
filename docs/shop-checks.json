@@ -1,0 +1,223 @@
+{
+  "checks": [
+    {
+      "label": "/",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "label": "/products",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "label": "/products/1",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "label": "/story",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "label": "/stores",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "label": "/contact",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "label": "/recipes",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "label": "/news",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "label": "/",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "/products",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "/products/1",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "/story",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "/stores",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "/contact",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "/recipes",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "/news",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "/",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "/products",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "/products/1",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "/story",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "/stores",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "/contact",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "/recipes",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "/news",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "/",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "/products",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "/products/1",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "/story",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "/stores",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "/contact",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "/recipes",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "/news",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "checkout",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "home-en",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "catalog-en",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "home-zh",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "catalog-zh",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "home-ko",
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "label": "catalog-ko",
+      "width": 360,
+      "scroll": 360
+    }
+  ],
+  "errors": [],
+  "search": true,
+  "categoryDeepLinks": true,
+  "categoryReload": true,
+  "sort": true,
+  "emptyReset": true,
+  "cartQuantity": true,
+  "checkoutLayout": true,
+  "cartPersistence": true,
+  "mobileMenu": true,
+  "videoPlayback": true,
+  "languages": [
+    "mn",
+    "en",
+    "zh",
+    "ko"
+  ],
+  "production": {
+    "search": true,
+    "categoryLinks": true,
+    "reload": true,
+    "invalidCategoryFallback": true,
+    "errors": []
+  }
+}

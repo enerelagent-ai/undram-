@@ -8,6 +8,16 @@ Warm ivory `#F6F1E7`, amber `#C88A24`, deep brown `#2A1C12`, olive `#697153`. Lo
 
 Home, catalog, product detail, story, stores, recipes and recipe detail, news and article detail, contact, 404, loading and error states use the same system. Four languages and all static product routes remain available. Original source data and prices are retained. No reviews, ratings, certificates or new health claims were added.
 
+## Store layout update (2026-10-19)
+
+The homepage now leads with shopping: a persistent product search and cart, category navigation, a compact banner, delivery/payment/contact information, four category shortcuts, and eight product cards with visible prices and full-width add-to-cart buttons. Gift sets and a three-step ordering guide follow the products; FAQs, brand story, films, photos and editorial content remain below. `app/commerce.css` supplies the shared shopping styles while preserving UNDRAM's warm palette and display typography. Product names and functional headings use Manrope for quick scanning.
+
+The catalog has a desktop category sidebar with real product counts, search, sorting and an empty-state reset. At smaller widths the sidebar becomes filter buttons; phone product grids show two columns. Header searches submit `q` to `/products`; category links use `category`. Query parameters are read within a Suspense boundary for compatibility with the static export. Navigating to a different search or category resets the catalog state.
+
+The ordering guide describes the existing bank-transfer and Messenger flow, including the 8,000₮ delivery charge. It does not imply automatic payment verification or promise a delivery time. Contact links use the existing business number. The cart, checkout validation, product prices and order submission logic are unchanged.
+
+Validation: 32 route/viewport combinations at 360, 390, 768 and 1440px passed with no horizontal overflow. Search, category deep links and reload, price sorting, empty-state reset, cart quantity/persistence, checkout layout, mobile navigation, film playback and all four languages passed with no JavaScript errors. Mobile search fields use 16px text. Lint, TypeScript, all seven existing tests and the 45-page static export passed. Evidence: `docs/shop-checks.json` and `docs/screenshots/shop-*.png`.
+
 ## React Bits evaluation
 
 Reviewed upstream README, MIT + Commons Clause license and JS sources on 2026-10-14:
@@ -55,4 +65,4 @@ A Messenger window opening does not establish delivery or payment confirmation. 
 - English, Chinese and Korean editorial placeholders were replaced with the matching existing brand photos.
 - Screenshots: `docs/screenshots/`; machine-readable results: `docs/browser-checks.json` and `docs/checkout-states-checks.json`.
 
-The static preview runs at http://127.0.0.1:3001 and the webpack development preview at http://127.0.0.1:3000 for this local session. The temporary static preview server resolves exported `.html` files for nested paths. For subsequent sessions use `npm run dev -- --hostname 127.0.0.1 --webpack`.
+For local development use `npm run dev -- --hostname 127.0.0.1 --webpack`. To preview the production build, serve `out/` with clean-URL support that resolves exported `.html` files before same-named directories; product detail routes live in the `products/` directory alongside `products.html`.

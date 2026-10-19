@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Plus, ArrowUpRight } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { useCartActions } from "@/context/CartContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { asset, ui, sizeOf, categoryOf } from "@/utils/storefront";
-import ProductTilt from "./effects/ProductTilt";
 export default function ProductCard({ product }) {
   const { language } = useLanguage();
   const { addToCart } = useCartActions();
@@ -18,21 +17,16 @@ export default function ProductCard({ product }) {
         aria-label={product.title}
       >
         <span className="product-label">{t[categoryOf(product.id)]}</span>
-        <ProductTilt>
           <Image
             src={asset(product.image)}
             alt={product.title}
             fill
-            sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 30vw"
+            sizes="(max-width: 600px) 45vw, (max-width: 1000px) 30vw, 24vw"
             className="object-contain"
           />
-        </ProductTilt>
-        <span className="photo-arrow">
-          <ArrowUpRight size={20} />
-        </span>
       </Link>
       <div className="product-meta">
-        <span>{sizeOf(product)}</span>
+        <span>{sizeOf(product) === "UNDRAM" ? "" : sizeOf(product)}</span>
         <span>UNDRAM</span>
       </div>
       <Link href={`/products/${product.id}`}>
@@ -46,7 +40,7 @@ export default function ProductCard({ product }) {
           aria-label={`${product.title}: ${t.add}`}
         >
           <span>{t.add}</span>
-          <Plus size={18} />
+          <ShoppingCart size={17} />
         </button>
       </div>
     </article>

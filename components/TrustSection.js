@@ -1,32 +1,16 @@
 "use client";
-import { Flower2, MapPin, HandHeart } from "lucide-react";
+import Link from "next/link";
+import { Truck, Landmark, Phone } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-const copy = {
-  mn: [
-    "Зэрлэг цэцэгсийн шим",
-    "Хатан Туулын хөндийгөөс",
-    "Зөгийчний гараас таны гарт",
-  ],
-  en: [
-    "From wildflowers",
-    "From the Tuul River valley",
-    "From our beekeepers to you",
-  ],
-  zh: ["野花精华", "源自图勒河谷", "蜂农用心呈现"],
-  ko: ["야생화의 풍미", "툴강 계곡에서", "양봉가의 정성으로"],
-};
+import { shopCopy } from "@/utils/shopCopy";
 export default function TrustSection() {
   const { language } = useLanguage();
+  const c = shopCopy[language];
   return (
-    <div className="values-strip">
-      <div className="shell">
-        {[Flower2, MapPin, HandHeart].map((Icon, i) => (
-          <div key={i}>
-            <Icon size={21} strokeWidth={1.3} />
-            <span>{copy[language][i]}</span>
-          </div>
-        ))}
-      </div>
+    <div className="shop-services shell">
+      {[[Truck, c.delivery, c.deliveryBody, "/contact"], [Landmark, c.payment, c.paymentBody, "/#how-to-order"], [Phone, c.support, c.supportBody, "tel:+97691001393"]].map(([Icon, title, body, href]) => (
+        <Link href={href} key={title}><Icon size={25} strokeWidth={1.6} /><div><strong>{title}</strong><span>{body}</span></div></Link>
+      ))}
     </div>
   );
 }

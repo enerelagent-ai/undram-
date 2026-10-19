@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./commerce.css";
 import localFont from "next/font/local";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { CartProvider } from "@/context/CartContext";
