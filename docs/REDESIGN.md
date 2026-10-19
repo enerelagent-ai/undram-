@@ -43,6 +43,10 @@ Video QA: all 15 clips decoded and played in Chrome; 360/768/1440px layouts, all
 
 ## Commerce
 
+`pine-nut-honey` was added on 2026-10-19 at the user-supplied price of 22,500₮. It uses the supplied pine-nut honey photo, with a 94 KB WebP copy for storefront display, and localized descriptions in all four languages. It appears first in the homepage selection and in the honey category. Net weight was not provided; the packaging field describes the visible clip-top glass jar without assuming a weight. The existing walnut honey remains a separate product.
+
+Product browser checks covered the image, expanded description, structured price metadata, localized content, 1440/390/360px layouts, homepage placement, category search and cart totals (30,500₮ for one or 53,000₮ for two, including delivery). Results: `docs/pine-honey-checks.json`; screenshots: `docs/screenshots/pine-honey-*.png`.
+
 The existing local cart, fixed 8,000₮ delivery fee, validation, bank information and Messenger handoff remain. Browser preferences are restored after hydration. Catalog, product detail and homepage share the same live-product merge. Firebase prices/images override matching static products while localized text and known static routes remain intact. New unknown Firebase IDs cannot be added as routable products without rebuilding a static export.
 
 A Messenger window opening does not establish delivery or payment confirmation. End-to-end QA must intercept external requests and avoid creating real orders. Test actual delivery/Firestore receipt only with a separately authorized test account/order.

@@ -1,0 +1,23 @@
+{
+  "product": "pine-nut-honey",
+  "price": 22500,
+  "locales": [
+    "mn",
+    "en",
+    "zh",
+    "ko"
+  ],
+  "widths": [
+    1440,
+    390,
+    360
+  ],
+  "image": true,
+  "description": true,
+  "metadata": true,
+  "homeFeatured": true,
+  "categorySearch": true,
+  "cartOneWithDelivery": 30500,
+  "cartTwoWithDelivery": 53000,
+  "errors": []
+}

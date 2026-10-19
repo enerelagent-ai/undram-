@@ -11,7 +11,7 @@ export default function ProductShowcase() {
   const { language } = useLanguage();
   const t = ui[language];
   const c = shopCopy[language];
-  const featured = [1, 2, 3, 4, "honey-set-6", 5, "oxymel", 8]
+  const featured = ["pine-nut-honey", 1, 2, 4, "honey-set-6", 5, "oxymel", 8]
     .map(id => products.find(p => String(p.id) === String(id))).filter(Boolean);
   return (
     <section className="shop-products shell" id="shop">

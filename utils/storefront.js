@@ -8,7 +8,7 @@ export const asset = (src) =>
           .replace(/\.[^.]+$/, ".webp")}`
       : src;
 export const categoryOf = (id) =>
-  [1, 2, 3, 4].includes(Number(id))
+  (String(id) === "pine-nut-honey" || [1, 2, 3, 4].includes(Number(id)))
     ? "honey"
     : Number(id) === 8
       ? "craft"
@@ -16,7 +16,7 @@ export const categoryOf = (id) =>
         ? "drinks"
         : "gifts";
 export const sizeOf = (p) =>
-  ({
+  p.packaging || ({
     1: "500 г",
     2: "250 г",
     3: "150 г",

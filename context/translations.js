@@ -33,6 +33,15 @@ export const translations = {
             relatedProducts: "Бусад бүтээгдэхүүнүүд",
             items: [
                 {
+                    id: "pine-nut-honey",
+                    title: "Хушны самартай цэвэр зөгийн бал",
+                    price: "22,500₮",
+                    image: "/images/honey-pine-nuts.png",
+                    alt: "Хушны самартай цэвэр зөгийн бал",
+                    packaging: "Түгжээтэй шилэн сав",
+                    description: "Цэвэр зөгийн балны алтлаг чихэрлэг амтыг хушны самрын зөөлөн, тослог амттай хослуулсан амттан. Самрын бүхэл үртэй энэхүү бал нь өдөр тутмын зууш, өглөөний цайнд амт нэмнэ.\n\nХэрэглэх санаа: Талх, шарсан талх, тараг, овьёос болон амттантай хослуулж хэрэглээрэй. Дангаар нь багахан халбагадаж амталж болно.\n\nСавлагаа: Дахин таглаж болох төмөр түгжээтэй шилэн сав.\n\nХадгалах: Нарны шууд тусгалаас хол, хуурай сэрүүн газар тагийг нь сайтар таглаж хадгална."
+                },
+                {
                     id: 12,
                     title: "Байгалийн хосгүй бэлэг",
                     price: "250,000₮",
@@ -405,6 +414,15 @@ export const translations = {
             relatedProducts: "Related Products",
             items: [
                 {
+                    id: "pine-nut-honey",
+                    title: "Pure honey with pine nuts",
+                    price: "22,500₮",
+                    image: "/images/honey-pine-nuts.png",
+                    alt: "Pure honey with pine nuts",
+                    packaging: "Clip-top glass jar",
+                    description: "Golden, sweet honey paired with the mellow, buttery taste of pine nuts. Whole pine nuts add texture to a delicious accompaniment for breakfast or an everyday snack.\n\nServing ideas: Enjoy with bread, toast, yoghurt, oats or desserts, or savour a small spoonful on its own.\n\nPackaging: A resealable glass jar with a metal clasp.\n\nStorage: Keep tightly closed in a cool, dry place away from direct sunlight."
+                },
+                {
                     id: 12,
                     title: "Nature's Unique Gift",
                     price: "250,000₮",
@@ -760,6 +778,15 @@ export const translations = {
             quantity: "数量",
             relatedProducts: "相关产品",
             items: [
+                {
+                    id: "pine-nut-honey",
+                    title: "松子纯蜂蜜",
+                    price: "22,500₮",
+                    image: "/images/honey-pine-nuts.png",
+                    alt: "松子纯蜂蜜",
+                    packaging: "搭扣玻璃罐",
+                    description: "金色蜂蜜的甜润与松子的柔和坚果风味相融合。整粒松子增添丰富口感，为早餐和日常小食带来香甜滋味。\n\n食用建议：搭配面包、吐司、酸奶、燕麦或甜点，也可少量直接品尝。\n\n包装：可重复密封的金属搭扣玻璃罐。\n\n保存：密封置于阴凉干燥处，避免阳光直射。"
+                },
                 {
                     id: 12,
                     title: "大自然的独特礼物",
@@ -1118,6 +1145,15 @@ export const translations = {
             quantity: "수량",
             relatedProducts: "관련 제품",
             items: [
+                {
+                    id: "pine-nut-honey",
+                    title: "잣을 넣은 순수 꿀",
+                    price: "22,500₮",
+                    image: "/images/honey-pine-nuts.png",
+                    alt: "잣을 넣은 순수 꿀",
+                    packaging: "클립형 유리병",
+                    description: "황금빛 꿀의 달콤함과 잣의 부드럽고 고소한 풍미가 어우러집니다. 통잣의 식감이 더해져 아침 식사와 일상의 간식에 잘 어울립니다.\n\n즐기는 방법: 빵, 토스트, 요거트, 오트밀이나 디저트에 곁들이거나 소량을 그대로 맛보세요.\n\n포장: 금속 클립으로 다시 닫을 수 있는 유리병.\n\n보관: 직사광선을 피해 서늘하고 건조한 곳에 밀봉하여 보관하세요."
+                },
                 {
                     id: "honey-set-6",
                     title: "꿀 선물 세트 (6개입)",
